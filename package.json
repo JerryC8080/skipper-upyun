@@ -1,6 +1,6 @@
 {
   "name": "skipper-upyun",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple skipper adapter for upyun",
   "main": "index.js",
   "scripts": {
@@ -22,11 +22,20 @@
   ],
   "author": "JerryC",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JerryC8080/skipper-upyun/issues"
+  },
+  "homepage": "https://github.com/JerryC8080/skipper-upyun",
   "devDependencies": {
-      "skipper-adapter-tests": "~1.5.2"
+    "skipper-adapter-tests": "~1.5.2"
   },
   "dependencies": {
-      "lodash": "~2.4.1",
-      "node-uuid": "~1.4.1"
-  }
+    "lodash": "~2.4.1",
+    "node-uuid": "~1.4.1"
+  },
+  "readme": "## A Simple Skipper Adapter For Upyun\n",
+  "readmeFilename": "README.md",
+  "_id": "skipper-upyun@1.0.1",
+  "_shasum": "73cb470ff26e8f6c849bbb23c0d580ead3abe70f",
+  "_from": "skipper-upyun@"
 }
