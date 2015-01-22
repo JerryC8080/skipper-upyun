@@ -1,0 +1,108 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish', '.' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/JerryC/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/JerryC/.npm/skipper-upyun/1.0.0/package.tgz', '.' ]
+11 verbose tarball /Users/JerryC/.npm/skipper-upyun/1.0.0/package.tgz
+12 verbose folder .
+13 info prepublish skipper-upyun@1.0.0
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/JerryC/.npm/1f1177db-tar.lock
+16 silly lockFile a2290ff6--skipper-upyun-1-0-0-package-tgz tar:///Users/JerryC/.npm/skipper-upyun/1.0.0/package.tgz
+17 verbose lock tar:///Users/JerryC/.npm/skipper-upyun/1.0.0/package.tgz /Users/JerryC/.npm/a2290ff6--skipper-upyun-1-0-0-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile a2290ff6--skipper-upyun-1-0-0-package-tgz tar:///Users/JerryC/.npm/skipper-upyun/1.0.0/package.tgz
+21 silly lockFile a2290ff6--skipper-upyun-1-0-0-package-tgz tar:///Users/JerryC/.npm/skipper-upyun/1.0.0/package.tgz
+22 silly lockFile 2ef88e84--npm-skipper-upyun-1-0-0-package /Users/JerryC/.npm/skipper-upyun/1.0.0/package
+23 verbose lock /Users/JerryC/.npm/skipper-upyun/1.0.0/package /Users/JerryC/.npm/2ef88e84--npm-skipper-upyun-1-0-0-package.lock
+24 silly lockFile 2ef88e84--npm-skipper-upyun-1-0-0-package /Users/JerryC/.npm/skipper-upyun/1.0.0/package
+25 silly lockFile 2ef88e84--npm-skipper-upyun-1-0-0-package /Users/JerryC/.npm/skipper-upyun/1.0.0/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'skipper-upyun',
+28 silly publish   version: '1.0.0',
+28 silly publish   description: 'A simple skipper adapter for upyun',
+28 silly publish   main: 'index.js',
+28 silly publish   scripts: { test: 'node -e "require(\'skipper-adapter-tests\')({module: require(\'./\')});"' },
+28 silly publish   keywords:
+28 silly publish    [ 'skipper',
+28 silly publish      'upyun',
+28 silly publish      'filesystem',
+28 silly publish      'file',
+28 silly publish      'upload',
+28 silly publish      'drive',
+28 silly publish      'sails',
+28 silly publish      'express' ],
+28 silly publish   author: { name: 'JerryC' },
+28 silly publish   license: 'MIT',
+28 silly publish   devDependencies: { 'skipper-adapter-tests': '~1.5.2' },
+28 silly publish   dependencies: { lodash: '~2.4.1', 'node-uuid': '~1.4.1' },
+28 silly publish   readme: '## A Simple Skipper Adapter For Upyun\n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   _id: 'skipper-upyun@1.0.0',
+28 silly publish   _shasum: 'f0691857e2ed44a59179b0ef685e3eb73613c9c0',
+28 silly publish   _from: '.' }
+29 verbose request where is /skipper-upyun
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id 1c4f91c317dda025
+32 verbose url raw /skipper-upyun
+33 verbose url resolving [ 'https://registry.npmjs.org/', './skipper-upyun' ]
+34 verbose url resolved https://registry.npmjs.org/skipper-upyun
+35 verbose request where is https://registry.npmjs.org/skipper-upyun
+36 info trying registry request attempt 1 at 17:43:53
+37 http PUT https://registry.npmjs.org/skipper-upyun
+38 http 403 https://registry.npmjs.org/skipper-upyun
+39 verbose headers { date: 'Thu, 22 Jan 2015 09:43:53 GMT',
+39 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+39 verbose headers   'content-type': 'application/json',
+39 verbose headers   'cache-control': 'max-age=60',
+39 verbose headers   'content-length': '2058',
+39 verbose headers   'accept-ranges': 'bytes',
+39 verbose headers   via: '1.1 varnish',
+39 verbose headers   'x-served-by': 'cache-hk91-HKG',
+39 verbose headers   'x-cache': 'MISS',
+39 verbose headers   'x-cache-hits': '0',
+39 verbose headers   'x-timer': 'S1421919833.661793,VS0,VE180',
+39 verbose headers   'keep-alive': 'timeout=10, max=50',
+39 verbose headers   connection: 'Keep-Alive' }
+40 error publish Failed PUT 403
+41 error Error: forbidden cannot modify pre-existing version: 1.0.0
+41 error old={"name":"skipper-upyun","version":"1.0.0","description":"A simple skipper adapter for upyun","main":"index.js","scripts":{"test":"node -e \"require('skipper-adapter-tests')({module: require('./')});\""},"keywords":["skipper","upyun","filesystem","file","upload","drive","sails","express"],"author":{"name":"JerryC"},"license":"MIT","devDependencies":{"skipper-adapter-tests":"~1.5.2"},"dependencies":{"lodash":"~2.4.1","node-uuid":"~1.4.1"},"_id":"skipper-upyun@1.0.0","_shasum":"3c638394e087736b16310ed9b2980c17a14fb32e","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"jerryc","email":"huangjerryc@gmail.com"},"maintainers":[{"name":"jerryc","email":"huangjerryc@gmail.com"}],"dist":{"shasum":"3c638394e087736b16310ed9b2980c17a14fb32e","tarball":"http://registry.npmjs.org/skipper-upyun/-/skipper-upyun-1.0.0.tgz"}}
+41 error new={"name":"skipper-upyun","version":"1.0.0","description":"A simple skipper adapter for upyun","main":"index.js","scripts":{"test":"node -e \"require('skipper-adapter-tests')({module: require('./')});\""},"keywords":["skipper","upyun","filesystem","file","upload","drive","sails","express"],"author":{"name":"JerryC"},"license":"MIT","devDependencies":{"skipper-adapter-tests":"~1.5.2"},"dependencies":{"lodash":"~2.4.1","node-uuid":"~1.4.1"},"readme":"## A Simple Skipper Adapter For Upyun\u000a","readmeFilename":"README.md","_id":"skipper-upyun@1.0.0","_shasum":"f0691857e2ed44a59179b0ef685e3eb73613c9c0","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"jerryc","email":"huangjerryc@gmail.com"},"maintainers":[{"name":"jerryc","email":"huangjerryc@gmail.com"}],"dist":{"shasum":"f0691857e2ed44a59179b0ef685e3eb73613c9c0","tarball":"http://registry.npmjs.org/skipper-upyun/-/skipper-upyun-1.0.0.tgz"}}: skipper-upyun
+41 error     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
+41 error     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
+41 error     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
+41 error     at Request.emit (events.js:98:17)
+41 error     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+41 error     at Request.emit (events.js:117:20)
+41 error     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+41 error     at IncomingMessage.emit (events.js:117:20)
+41 error     at _stream_readable.js:943:16
+41 error     at process._tickCallback (node.js:419:13)
+42 error If you need help, you may report this *entire* log,
+42 error including the npm and node versions, at:
+42 error     <http://github.com/npm/npm/issues>
+43 error System Darwin 14.0.0
+44 error command "node" "/usr/local/bin/npm" "publish" "."
+45 error cwd /Users/JerryC/Work/Workspaces/TestFind/skipper-upyun
+46 error node -v v0.10.32
+47 error npm -v 1.4.28
+48 verbose exit [ 1, true ]
