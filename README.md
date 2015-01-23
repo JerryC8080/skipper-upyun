@@ -19,8 +19,7 @@ Also make sure you have skipper itself [installed as your body parser](http://be
 
 ## Usage
 
-```
-javascript
+```javascript
 req.file('filename')
 .upload({
   adapter: require('skipper-upyun'),
