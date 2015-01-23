@@ -45,7 +45,14 @@ module.exports = function buildDiskReceiverStream(options) {
     // defaults to ~15MB
     maxBytes: 15000000,
 
-    dirname: '/skipper-upyun'
+    // Upload limit for per coming file (in bytes)
+    // falsy means no limit
+    perMaxBytes: 15000000,
+
+    // Upload limit for per file (in content-type)
+    // falsy means accept all the type
+    acceptTypes: []
+
   });
 
 
@@ -72,10 +79,21 @@ module.exports = function buildDiskReceiverStream(options) {
     var upyun = new UPYUN(options.bucket, options.operator, options.password, options.endpoing, options.legacy),
         buffers = [];
 
+    // Check the file limit
+    if (options.perMaxBytes && __newFile.byteCount > options.perMaxBytes){
+      return done(new Error('The file \'' + __newFile.filename + '\' beyond size limit, only accept less than ' + options.perMaxBytes + ' bytes'));
+    }
+    if (options.acceptTypes && options.acceptTypes.indexOf('image/jpeg') === -1){
+      return done(new Error('Content-type of the file \'' + __newFile.filename + '\' does not accepted'));
+    }
+
     // Determine the file descriptor-- the unique identifier.
     // Often represents the location where file should be written.
     __newFile.fd;
-    var uploadDir = options.dirname + '/' + __newFile.fd;
+    var uploadDir = __newFile.fd;
+    if (uploadDir.substr(0, 1) !== '/'){
+      uploadDir = '/' + uploadDir;
+    }
 
     // When then 'data' event emited, push the chunk to the buffers array.
     __newFile.on('data', function(chunk) {
@@ -89,10 +107,13 @@ module.exports = function buildDiskReceiverStream(options) {
         if (err){
           return done(err);
         }
-        if (data.statusCode != 200){S
-          return done(new Error(data.error.message));
+        if (!data){
+          return done(new Error('Upload failed!'));
         }
-        __newFile.fd = 'http://' + options.domain + '/' + uploadDir;
+        if (data && data.statusCode != 200){
+          return done(new Error(data.error['message']));
+        }
+        __newFile.fd = options.domain + uploadDir;
         return done();
       })
     })
