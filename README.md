@@ -1,7 +1,7 @@
 
 # Upyun Adapter for Skipper
 
-[![npm version](https://img.shields.io/npm/v/upyun.svg?style=flat)](https://www.npmjs.com/package/skipper-upyun) 
+[![npm version](https://img.shields.io/npm/v/skipper-upyun.svg?style=flat)](https://www.npmjs.com/package/skipper-upyun) 
 [![NPM downloads](https://img.shields.io/npm/dm/skipper-upyun.svg?style=flat)](https://www.npmjs.com/package/skipper-upyun)
 
 
