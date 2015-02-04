@@ -51,7 +51,7 @@ module.exports = function buildDiskReceiverStream(options) {
 
     // Upload limit for per file (in content-type)
     // falsy means accept all the type
-    acceptTypes: []
+    acceptTypes: null
 
   });
 
@@ -83,7 +83,7 @@ module.exports = function buildDiskReceiverStream(options) {
     if (options.perMaxBytes && __newFile.byteCount > options.perMaxBytes){
       return done(new Error('The file \'' + __newFile.filename + '\' beyond size limit, only accept less than ' + options.perMaxBytes + ' bytes'));
     }
-    if (options.acceptTypes && options.acceptTypes.indexOf('image/jpeg') === -1){
+    if (options.acceptTypes && options.acceptTypes.indexOf(__newFile.headers['content-type']) === -1){
       return done(new Error('Content-type of the file \'' + __newFile.filename + '\' does not accepted'));
     }
 
