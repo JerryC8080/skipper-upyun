@@ -27,11 +27,18 @@
   },
   "homepage": "https://github.com/JerryC8080/skipper-upyun",
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "3.4.0",
+    "eslint-config-airbnb": "10.0.1",
+    "eslint-plugin-import": "1.14.0",
+    "eslint-plugin-jsx-a11y": "2.2.1",
+    "eslint-plugin-react": "6.2.0",
     "skipper-adapter-tests": "~1.5.2"
   },
   "dependencies": {
     "lodash": "~2.4.1",
-    "node-uuid": "~1.4.1"
+    "node-uuid": "~1.4.1",
+    "upyun": "^2.0.4"
   },
   "readme": "## A Simple Skipper Adapter For Upyun\n",
   "readmeFilename": "README.md",

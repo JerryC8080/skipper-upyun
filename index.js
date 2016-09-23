@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-var r_buildDiskReceiverStream = require('./standalone/build-disk-receiver-stream');
+var receiverStream = require('./standalone/build-upyun-receiver-stream');
 
 
 /**
@@ -13,7 +13,7 @@ var r_buildDiskReceiverStream = require('./standalone/build-disk-receiver-stream
  * @return {Object}
  */
 
-module.exports = function DiskStore(options) {
+module.exports = function UpyunStore(options) {
 
   options = options || {};
 
@@ -34,7 +34,7 @@ module.exports = function DiskStore(options) {
     },
 
     receive: function (options){
-      return r_buildDiskReceiverStream(options);
+      return receiverStream(options);
     }
   };
 
