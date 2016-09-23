@@ -1,0 +1,25 @@
+/**
+ * The file created by sails-generete-x-babel at Sun Sep 04 2016 15:54:44 GMT+0800 (CST)
+ */
+
+{
+  "presets": [
+    "es2015",
+    "stage-0"
+  ],
+  "plugins": [
+    "syntax-export-extensions",
+    "transform-export-extensions",
+    "add-module-exports",
+    [
+      "babel-plugin-transform-builtin-extend",
+      {
+        "globals": [
+          "Error",
+          "Array"
+        ]
+      }
+    ]
+  ],
+  "ignore": []
+}
