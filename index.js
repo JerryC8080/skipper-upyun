@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-var r_buildDiskReceiverStream = require('./standalone/build-disk-receiver-stream');
+var r_buildDiskReceiverStream = require('./standalone/build-upyun-receiver-stream');
 
 
 /**
