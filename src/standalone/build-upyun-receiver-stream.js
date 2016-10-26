@@ -1,8 +1,8 @@
 /*
  * @Author: JerryC (huangjerryc@gmail.com)
  * @Date: 2016-09-23 16:16:39
- * @Last Modified by:   JerryC
- * @Last Modified time: 2016-09-23 16:16:39
+ * @Last Modified by: JerryC
+ * @Last Modified time: 2016-10-26 15:38:18
  * @Description
  */
 
@@ -13,6 +13,23 @@ var WritableStream = require('stream').Writable;
 var _ = require('lodash');
 var UPYUN = require('upyun');
 
+var instances = {};
+
+/**
+ * Get upyun instance
+ */
+function getInstance(options) {
+  var bucket = options.bucket;
+  var upyunInstance = instances[bucket];
+
+  // If can not found instance, then new one.
+  if (!upyunInstance) {
+    instances[bucket] = upyunInstance = new UPYUN(options.bucket, options.operator, options.password, options.endpoing, options.apiVersion);
+  }
+
+  return upyunInstance;
+}
+
 /**
  * Upload the file to remote service of upyun
  * @param  {} path
@@ -22,7 +39,7 @@ var UPYUN = require('upyun');
  */
 function uploadToUpyun(path, file, __newFile, done) {
   var options = this.options;
-  var upyun = new UPYUN(options.bucket, options.operator, options.password, options.endpoing, options.apiVersion);
+  var upyun = getInstance(options);
   upyun.uploadFile(path, file, __newFile.headers['content-type'], true, function (err, data) {
     if (err) {
       return done(err);
@@ -74,7 +91,7 @@ function onFile(__newFile, encoding, done) {
   // When the 'end' event emited, upload the 'buffers' to the upyun server.
   __newFile.on('end', function () {
     var buffer = Buffer.concat(buffers);
-    uploadToUpyun.bind({options})(uploadDir, buffer, __newFile, done);
+    uploadToUpyun.bind({ options })(uploadDir, buffer, __newFile, done);
   });
 }
 
@@ -121,7 +138,7 @@ function buildUpyunReceiverStream(opts) {
   // This `_write` method is invoked each time a new file is received
   // from the Readable stream (Upstream) which is pumping filestreams
   // into this receiver.  (filename === `__newFile.filename`).
-  receiver__._write = onFile.bind({options});
+  receiver__._write = onFile.bind({ options });
 
   return receiver__;
 }
